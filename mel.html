@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Para MelMel 🍯</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+/* BOTÃO */
+.botao {
+    padding: 20px 40px;
+    font-size: 20px;
+    background: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botao:hover {
+    transform: scale(1.1);
+}
+
+/* CARTA */
+.carta {
+    width: 300px;
+    height: 200px;
+    background: #fff;
+    position: absolute;
+    border-radius: 10px;
+    display: none;
+    padding: 20px;
+    text-align: center;
+    animation: abrir 1s ease;
+}
+
+@keyframes abrir {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* CORAÇÃO */
+.coracao {
+    color: red;
+    font-size: 30px;
+    animation: bater 1s infinite;
+}
+
+@keyframes bater {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+</style>
+</head>
+
+<body>
+
+<!-- MÚSICA AUTOMÁTICA -->
+<audio autoplay loop>
+    <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<!-- BOTÃO -->
+<button class="botao" onclick="abrirCarta()">
+    Clique aqui 🐆
+</button>
+
+<!-- CARTA -->
+<div class="carta" id="carta">
+    <h2>Para você, meu bem ☀️</h2>
+    <p>
+     Meu Bem, você é uma menina incrível e eu tenho orgulho de você.<br>
+        E já dizia sérgio maré - Olhos de Mel<br>
+        Uma mistura de brisa com pé no chão, uma rima oerfeita, mais linda canção...<br>
+    </p>
+    <div class="coracao"></div>
+</div>
+
+
+<script>
+function abrirCarta() {
+    document.querySelector('.botao').style.display = 'none';
+    document.getElementById('carta').style.display = 'block';
+}
+</script>
+
+</body>
+</html>
